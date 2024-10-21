@@ -5,7 +5,14 @@ import { CardComponent } from '../card/card.component';
 import { MbscModule } from '@mobiscroll/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import {
+  provideIonicAngular,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonCard,
+} from '@ionic/angular/standalone';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
@@ -15,9 +22,14 @@ import { BrowserModule } from '@angular/platform-browser';
     FormsModule,
     CommonModule,
     BrowserModule,
-    IonicModule.forRoot(),
     RouterOutlet,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonCard,
   ],
   bootstrap: [AppComponent],
+  providers: [provideIonicAngular()],
 })
 export class AppModule {}

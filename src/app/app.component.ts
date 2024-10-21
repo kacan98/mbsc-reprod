@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
-import { IonGrid, IonicModule } from '@ionic/angular';
 import {
   MbscCalendarEvent,
   MbscEventcalendarView,
-  MbscModule,
   MbscResource,
 } from '@mobiscroll/angular';
-import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-root',
