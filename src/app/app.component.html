@@ -1,18 +1,17 @@
-<main class="main">
-  <mbsc-eventcalendar
-    [data]="boardCards"
-    [view]="view"
-    [scheduleEventTemplate]="scheduleEventTemplate"
-  >
-  </mbsc-eventcalendar>
+<main>
+  <mbsc-page>
+    <mbsc-eventcalendar
+      [data]="boardCards"
+      [view]="view"
+      [scheduleEventTemplate]="scheduleEventTemplate"
+      [resources]="resources"
+    >
+    </mbsc-eventcalendar>
+  </mbsc-page>
 </main>
 
 <ng-template #scheduleEventTemplate let-event="event">
-  <div class="card">
-    this is a card
-    <div class="mbsc-event-title">{{ event.original.title }}</div>
-    <div class="mbsc-event-desc">{{ event.original.desc }}</div>
-  </div>
+  <div class="card" mbsc-draggable>a card</div>
 </ng-template>
 
 <router-outlet />

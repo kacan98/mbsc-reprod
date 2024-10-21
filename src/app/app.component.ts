@@ -25,6 +25,28 @@ export class AppComponent implements OnInit {
       eventHeight: 'variable',
     },
   };
+  resources = [
+    {
+      id: 'r1',
+      name: 'Resource 1',
+    },
+    {
+      id: 'r2',
+      name: 'Resource 2',
+    },
+    {
+      id: 'r3',
+      name: 'Resource 3',
+    },
+    {
+      id: 'r4',
+      name: 'Resource 4',
+    },
+    {
+      id: 'r5',
+      name: 'Resource 5',
+    },
+  ];
   boardCards?: MbscCalendarEvent[];
 
   // constructor() {
@@ -32,17 +54,31 @@ export class AppComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.boardCards = this.getCards();
-    }, 2000);
+    // setTimeout(() => {
+    //   this.boardCards = this.getCards();
+    // }, 2000);
   }
 
   getCards(): MbscCalendarEvent[] {
-    return [
-      {
-        date: new Date(),
-        title: 'Event 1',
-      },
-    ];
+    return getMockCards(5);
   }
 }
+
+const getMockCards = (count: number = 10): MbscCalendarEvent[] => {
+  const cards: MbscCalendarEvent[] = [];
+  for (let i = 0; i < count; i++) {
+    cards.push(getMockCard(i));
+  }
+  return cards;
+};
+
+const getMockCard = (id?: number): MbscCalendarEvent => {
+  if (!id) {
+    id = Math.floor(Math.random() * 1000);
+  }
+  return {
+    date: new Date(),
+    title: `Event ${id}`,
+    resource: `r1`,
+  };
+};
