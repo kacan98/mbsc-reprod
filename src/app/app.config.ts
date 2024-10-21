@@ -5,5 +5,5 @@ import { routes } from './app.routes';
 import { provideIonicAngular } from '@ionic/angular/standalone';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideIonicAngular({})]
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideIonicAngular({})],
 };

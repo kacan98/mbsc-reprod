@@ -1,18 +1,17 @@
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
+import { IonGrid, IonicModule } from '@ionic/angular';
 import {
   MbscCalendarEvent,
   MbscEventcalendarView,
   MbscModule,
   MbscResource,
 } from '@mobiscroll/angular';
-import { FormsModule } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { IonContent } from '@ionic/angular/standalone';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [IonContent, MbscModule, FormsModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
 })

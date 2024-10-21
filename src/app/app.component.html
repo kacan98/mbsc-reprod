@@ -1,17 +1,23 @@
 <ion-content>
-  <mbsc-page>
-    <mbsc-eventcalendar
-      [data]="boardCards"
-      [view]="view"
-      [scheduleEventTemplate]="scheduleEventTemplate"
-      [resources]="resources"
-    >
-    </mbsc-eventcalendar>
-  </mbsc-page>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <mbsc-page>
+          <mbsc-eventcalendar
+            [data]="boardCards"
+            [view]="view"
+            [scheduleEventTemplate]="scheduleEventTemplate"
+            [resources]="resources"
+          >
+          </mbsc-eventcalendar>
+        </mbsc-page>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <ng-template #scheduleEventTemplate let-event="event">
-  <div class="card" mbsc-draggable>a card</div>
+  <app-card mbsc-draggable> </app-card>
 </ng-template>
 
 <router-outlet />
