@@ -1,13 +1,15 @@
 <main>
-  <mbsc-page>
-    <mbsc-eventcalendar
-      [data]="boardCards"
-      [view]="view"
-      [scheduleEventTemplate]="scheduleEventTemplate"
-      [resources]="resources"
-    >
-    </mbsc-eventcalendar>
-  </mbsc-page>
+  <ion-content>
+    <mbsc-page>
+      <mbsc-eventcalendar
+        [data]="boardCards"
+        [view]="view"
+        [scheduleEventTemplate]="scheduleEventTemplate"
+        [resources]="resources"
+      >
+      </mbsc-eventcalendar>
+    </mbsc-page>
+  </ion-content>
 </main>
 
 <ng-template #scheduleEventTemplate let-event="event">

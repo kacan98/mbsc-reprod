@@ -6,11 +6,12 @@ import {
 import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { IonContent } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MbscModule, FormsModule, RouterOutlet],
+  imports: [IonContent, MbscModule, FormsModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
 })
