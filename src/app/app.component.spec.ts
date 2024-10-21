@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'mbsc-repro' title`, () => {
+  it(`should have the 'mbsc-reprod' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('mbsc-repro');
+    expect(app.title).toEqual('mbsc-reprod');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, mbsc-repro');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, mbsc-reprod');
   });
 });
