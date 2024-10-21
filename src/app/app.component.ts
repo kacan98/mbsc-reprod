@@ -2,6 +2,7 @@ import {
   MbscCalendarEvent,
   MbscEventcalendarView,
   MbscModule,
+  MbscResource,
 } from '@mobiscroll/angular';
 import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -31,22 +32,7 @@ export class AppComponent implements OnInit {
       id: 'r1',
       name: 'Resource 1',
     },
-    {
-      id: 'r2',
-      name: 'Resource 2',
-    },
-    {
-      id: 'r3',
-      name: 'Resource 3',
-    },
-    {
-      id: 'r4',
-      name: 'Resource 4',
-    },
-    {
-      id: 'r5',
-      name: 'Resource 5',
-    },
+    ...getMockResources(120),
   ];
   boardCards?: MbscCalendarEvent[];
 
@@ -55,9 +41,10 @@ export class AppComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.boardCards = this.getCards();
-    // }, 2000);
+    console.log(this.resources);
+    setTimeout(() => {
+      this.boardCards = this.getCards();
+    }, 2000);
   }
 
   getCards(): MbscCalendarEvent[] {
@@ -66,15 +53,11 @@ export class AppComponent implements OnInit {
 }
 
 const getMockCards = (count: number = 10): MbscCalendarEvent[] => {
-  const cards: MbscCalendarEvent[] = [];
-  for (let i = 0; i < count; i++) {
-    cards.push(getMockCard(i));
-  }
-  return cards;
+  return Array.from({ length: count }, (_, i) => getMockCard(i));
 };
 
 const getMockCard = (id?: number): MbscCalendarEvent => {
-  if (!id) {
+  if (id === undefined) {
     id = Math.floor(Math.random() * 1000);
   }
   return {
@@ -82,4 +65,18 @@ const getMockCard = (id?: number): MbscCalendarEvent => {
     title: `Event ${id}`,
     resource: `r1`,
   };
+};
+
+const getMockResource = (id?: number): MbscResource => {
+  if (id === undefined) {
+    id = Math.floor(Math.random() * 10000 + 1); //make sure id is not 1
+  }
+  return {
+    id: `r${id}`,
+    name: `Resource ${id}`,
+  };
+};
+
+const getMockResources = (count: number = 10): MbscResource[] => {
+  return Array.from({ length: count }, (_, i) => getMockResource(i + 2));
 };
