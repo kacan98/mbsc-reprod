@@ -15,10 +15,8 @@ export class AppComponent {
   view: MbscEventcalendarView = {
     timeline: {
       type: 'week',
-      startDay: 1,
-      endDay: 5,
       eventList: true,
-      eventHeight: 'variable',
+      eventHeight: 'variable', //when this is not present, even scrolling won't fix the cards overflowing
     },
   };
   resources = [

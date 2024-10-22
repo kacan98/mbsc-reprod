@@ -12,6 +12,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
+      // This simulates a change in the height of the card
       this.somethingThatChangesTheHeighAsynchronously =
         faker.string.sample(100);
     }, 1000);
