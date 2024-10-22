@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   MbscCalendarEvent,
   MbscEventcalendarView,
-  MbscResource,
+  MbscResource
 } from '@mobiscroll/angular';
 
 @Component({
@@ -10,7 +10,7 @@ import {
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'mbsc-reprod';
   view: MbscEventcalendarView = {
     timeline: {
@@ -26,23 +26,16 @@ export class AppComponent implements OnInit {
       id: 'r1',
       name: 'Resource 1',
     },
-    ...getMockResources(120),
+    ...getMockResources(20),
   ];
   boardCards?: MbscCalendarEvent[];
 
-  // constructor() {
-  //   this.boardCards = this.getCards();
-  // }
-
-  ngOnInit(): void {
-    console.log(this.resources);
-    setTimeout(() => {
-      this.boardCards = this.getCards();
-    }, 2000);
+  constructor() {
+    this.boardCards = this.getCards();
   }
 
   getCards(): MbscCalendarEvent[] {
-    return getMockCards(5);
+    return getMockCards(2);
   }
 }
 
